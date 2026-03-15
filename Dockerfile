@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     libpng-dev libjpeg-dev libfreetype6-dev libzip-dev libpq-dev \
     unzip git curl nodejs npm \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install gd zip pdo pdo_pgsql pdo_mysql bcmath opcache \
+    && docker-php-ext-install gd zip pdo pdo_pgsql pdo_mysql bcmath opcache exif \
     && a2enmod rewrite
 
 # Set Apache document root
