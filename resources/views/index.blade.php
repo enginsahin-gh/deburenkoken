@@ -1,22 +1,22 @@
 @extends('layout.main')
 @section('content')
-<style>.ltn__call-to-action-area .call-to-action-inner a{border-radius: 6px;}</style>
+    <!-- Hero Section -->
     <div class="ltn__about-us-area search pt-120 pb-120 home-banner">
         <div class="container">
             <div class="row">
                 <div class="align-self-center">
                     <div class="about-us-info-wrap">
                         <div class="section-title-area ltn__section-title-2 text-center">
-                            <h1 class="section-title">Vind gerechten bij jou in de buurt</h1>
+                            <h1 class="section-title fade-in-up">Vind thuisgekookt eten bij jou in de buurt</h1>
+                            <p class="hero-subtitle fade-in-up fade-in-up-delay-1">Verse maaltijden van koks uit je eigen wijk</p>
                         </div>
-                        <div class="search-open">
+                        <div class="search-open fade-in-up fade-in-up-delay-2">
                             <input type="hidden" id="client" value="false">
                             <form action="{{route('search.coordinates')}}" method="GET">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12 pos-relative">
-                                        <!-- <i class="fa-solid fa-location-dot location-pin"></i> -->
-                                        <input type="text" class="form-input-box search-box" placeholder="Locatie" name="plaats" id="autocomplete" aria-describedby="selection">
+                                        <input type="text" class="form-input-box search-box" placeholder="Voer je postcode of plaatsnaam in..." name="plaats" id="autocomplete" aria-describedby="selection">
                                         <i class="fa-solid fa-magnifying-glass magnifying-glass pointer" id='searchButton'></i>
                                     </div>
                                     <div class="col-2 hide">
@@ -30,7 +30,7 @@
                                     </div>
                                 </div>
                                 @error('plaats')
-                                    <div class="error red">Voer een plaats in en selecteer een in het dropdown menu</div>
+                                    <div class="error red" style="color: #FCA5A5; margin-top: 8px;">Voer een plaats in en selecteer een in het dropdown menu</div>
                                 @enderror
 
                                 <div class="form-group d-none" id="lat_area">
@@ -50,14 +50,21 @@
                                 <button type="submit" id="zoeken" disabled class="d-none"></button>
                             </form>
                         </div>
-                        <div class="align-content-end">
+                        <div class="align-content-end fade-in-up fade-in-up-delay-2">
                             <div class="text-left">
-                                <div id="searchError" style="color: red; display: none;">
+                                <div id="searchError" style="color: #FCA5A5; display: none;">
                                     Voer een geldig adres in met een geldige postcode.
                                 </div>                    
                             </div>
-                            <div class="text-right">
-                                <a href="{{route('search.cooks')}}" class="cook-search-btn">Bekijk Thuiskoks</a>
+                            <div class="text-center" style="margin-top: 16px;">
+                                <a href="{{route('search.cooks')}}" class="cook-search-btn"><i class="fa-solid fa-users"></i> Bekijk alle Thuiskoks</a>
+                            </div>
+                        </div>
+                        <!-- Social proof -->
+                        <div class="social-proof-counter fade-in-up fade-in-up-delay-3">
+                            <div class="counter-badge">
+                                <i class="fa-solid fa-fire"></i>
+                                <span>Ontdek verse maaltijden van thuiskoks bij jou in de buurt</span>
                             </div>
                         </div>
                     </div>
@@ -66,8 +73,8 @@
         </div>
     </div>
 
-
-    <div class="ltn__service-area ltn__primary-bg pt-115 pb-70">
+    <!-- How it works -->
+    <div class="ltn__service-area pt-115 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -80,33 +87,36 @@
                 <div class="col-lg-4 col-sm-6">
                     <div class="ltn__service-item-1">
                         <div class="service-item-img">
+                            <span class="step-number">1</span><br>
                             <img src="img/hoe1.svg" alt="Zoek gerechten">
                         </div>
                         <div class="service-item-brief">
                             <h3>Zoek gerechten in de buurt</h3>
-                            <p>Je kunt via DeBurenKoken.nl thuisgekookte gerechten vinden uit jouw eigen omgeving. Scroll en laat je verrassen door het aanbod.</p>
+                            <p>Vind thuisgekookte gerechten uit jouw omgeving. Scroll en laat je verrassen door het aanbod.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="ltn__service-item-1">
                         <div class="service-item-img">
+                            <span class="step-number">2</span><br>
                             <img src="img/hoe2.png" alt="Contact met Thuiskok">
                         </div>
                         <div class="service-item-brief">
-                            <h3>Kom direct in contact met een Thuiskok</h3>
-                            <p>Heb je een gerecht gevonden? Bestel dan direct via DeBurenKoken.nl met een paar klikken bij de Thuiskok uit jouw buurt.</p>
+                            <h3>Bestel met een paar klikken</h3>
+                            <p>Heb je een gerecht gevonden? Bestel direct via DeBurenKoken.nl bij de Thuiskok uit jouw buurt.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="ltn__service-item-1">
                         <div class="service-item-img">
+                            <span class="step-number">3</span><br>
                             <img src="img/hoe3.png" alt="Geniet">
                         </div>
                         <div class="service-item-brief">
-                            <h3>Geniet!</h3>
-                            <p>Haal je bestelling af en geniet van een thuisgekookte maaltijd!</p>
+                            <h3>Haal af & geniet!</h3>
+                            <p>Haal je bestelling af en geniet van een heerlijke thuisgekookte maaltijd!</p>
                         </div>
                     </div>
                 </div>
@@ -114,73 +124,15 @@
         </div>
     </div>
 
-
-   <!-- Homecook reviews 
-   <div class="ltn__about-us-area testimonials testimonials-home">
-       <div class="container">
-           <div class="row justify-content-center">
-               <div class="align-self-center w-80">
-                    <div class="about-us-info-wrap">
-                        <div class="page-title">
-                           <h1>Woorden van Thuiskoks</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row justify-content-center testimonial-content">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="testimonial-item alt">
-                        <div class="circle">
-                            <img src="{{asset('img/nine.jpg')}}" class="round-image mx-auto" alt="gratis aanmelden">
-                        </div>
-                        <div class="service-item-brief">
-                            <h4>Kookliefhebber, Thuiskok uit Sliedrecht</h4>
-                            <hr/>
-                           <p>Ik vind het fantastisch om te zien hoe iets eenvoudigs als een maaltijd mensen samenbrengt. Of het nu een snelle doordeweekse maaltijd is of een uitgebreid diner, het is altijd bijzonder om te zien hoe een goed bereide maaltijd een glimlach op iemands gezicht tovert.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="testimonial-item">
-                        <div class="circle">
-                            <img src="{{asset('img/ten.jpg')}}" class="round-image mx-auto" alt="Contact met Thuiskok">
-                        </div>
-                        <div class="service-item-brief">
-                            <h4>Dethuischef, Thuiskok uit Papendrecht</h4>
-                            <hr/>
-                            <p>Als kok is koken voor mij veel meer dan alleen een dagelijkse taak; het is een passie die me vreugde en voldoening brengt. Wat ik het meest waardeer aan koken, is de creativiteit die het met zich meebrengt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="testimonial-item alt">
-                        <div class="circle">
-                            <img src="{{asset('img/eleven.jpg')}}" class="round-image mx-auto" alt="Geniet">
-                        </div>
-                        <div class="service-item-brief">
-                            <h4>Desmaakmaker, Thuiskok uit Sliedrecht</h4>
-                            <hr/>
-                            <p>Ik vind het geweldig om te experimenteren met seizoensgebonden producten. Er is iets bijzonders aan het koken met ingrediënten die op dat moment op hun best zijn.</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-       </div>
- </div> 
--->
-
-
+    <!-- CTA: Word Thuiskok -->
     <div class="ltn__call-to-action-area ltn__call-to-action-4 bg-image pt-115 pb-60 mb-60">
         <div style='z-index: 0;' class="container">
             <div class="call-to-action-inner call-to-action-inner-4">
-                
-                    <div class="section-title-area ltn__section-title-2">
-                        <h1>Wil jij gerechten delen met de buurt?</h1>
-                        <p>Meld je aan als Thuiskok en begin direct met het aanbieden van jouw heerlijke gerechten!</p>
-                        <a href="{{ route('register.info') }}">Registreer</a>
-                    </div>
-                
+                <div class="section-title-area ltn__section-title-2">
+                    <h1><i class="fa-solid fa-heart" style="color: var(--dbk-accent-light); margin-right: 8px;"></i> Wil jij gerechten delen met de buurt?</h1>
+                    <p>Meld je aan als Thuiskok en begin direct met het aanbieden van jouw heerlijke gerechten!</p>
+                    <a href="{{ route('register.info') }}"><i class="fa-solid fa-arrow-right"></i> Registreer nu</a>
+                </div>
             </div>
         </div>
     </div>

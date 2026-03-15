@@ -3,19 +3,18 @@
 @section('content')
 
     <!-- login title -->
-    <div class="ltn__about-us-area pt-20 pb-20">
+    <div class="ltn__about-us-area pt-20 pb-20" style="min-height: 80vh; display: flex; align-items: center;">
         <div class="container">
-            <div class="row">
-                <div class="col-1"></div>
-                <div class="col-10">
-                    <div class="login-box">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-md-12">
+                    <div class="login-box fade-in-up">
                         <div class="row">
-                            <div class="col-5">
-                                <img src="{{asset('img/login-sideImg.svg')}}" class="login-sideImg" />
+                            <div class="col-md-5 col-12" style="background: linear-gradient(135deg, var(--dbk-primary-dark), var(--dbk-primary)); display: flex; align-items: center; justify-content: center; padding: 40px;">
+                                <img src="{{asset('img/login-sideImg.svg')}}" class="login-sideImg" style="filter: brightness(10); max-width: 80%;" />
                             </div>
 
-                            <div class="col-7">
-                                <h1 class="section-title">Inloggen</h1>
+                            <div class="col-md-7 col-12" style="padding: 32px;">
+                                <h1 class="section-title" style="text-align: left;">Welkom terug</h1>
                                 <div class="col-12 p-0">
                                     <x-csrf-error />
                                     @if(!$errors->has('csrf') && $errors->any())
@@ -70,7 +69,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-1"></div>
             </div>             
         </div>
     </div>

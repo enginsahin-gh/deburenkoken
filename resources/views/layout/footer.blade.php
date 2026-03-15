@@ -1,6 +1,6 @@
 <!-- FOOTER AREA START -->
-<footer class="ltn__footer-area  ">
-    <div class="footer-top-area section-bg-2 plr--5">
+<footer class="ltn__footer-area">
+    <div class="footer-top-area plr--5">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-12">
@@ -35,30 +35,28 @@
                 </div>
                 <div class="col-md-1 col-sm-6 col-12">
                     <div class="footer-widget footer-menu-widget social">
-                        <!-- <h4 class="footer-title">Sociale Media</h4> -->
                         @if(env('SOCIAL_FACEBOOK') || env('SOCIAL_INSTAGRAM') || env('SOCIAL_TWITTER'))
                         <div class="footer-menu">
                             <ul>
                                 @if(env('SOCIAL_INSTAGRAM'))
-                                <li><a href="{{ env('SOCIAL_INSTAGRAM') }}" class="pl-3"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="{{ env('SOCIAL_INSTAGRAM') }}" class="pl-3" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
                                 @endif
                                 @if(env('SOCIAL_FACEBOOK'))
-                                <li><a href="{{ env('SOCIAL_FACEBOOK') }}" class="pl-3"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="{{ env('SOCIAL_FACEBOOK') }}" class="pl-3" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
                                 @endif
                                 @if(env('SOCIAL_TWITTER'))
-                                <li><a href="{{ env('SOCIAL_TWITTER') }}" class="pl-3"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="{{ env('SOCIAL_TWITTER') }}" class="pl-3" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
                                 @endif
                             </ul>
                         </div>
                         @endif
-
                     </div>
                 </div>
             </div>
             
             <div class="row">
                 <div class="col-12 text-center bottom-footer">
-                    <a href="javascript:void(0);" class="scrollTop"><i class="fa fa-chevron-up"></i></a>
+                    <a href="javascript:void(0);" class="scrollTop" aria-label="Naar boven scrollen"><i class="fa fa-chevron-up"></i></a>
                     <p><a href="{{route('home')}}">DeBurenKoken</a> © Copyright 2026, All Rights Reserved.</p>
                 </div>
             </div>

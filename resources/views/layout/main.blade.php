@@ -1,8 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="nl">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<script src="https://kit.fontawesome.com/770d02fc1e.js" crossorigin="anonymous"></script>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -14,6 +11,8 @@
 
     <!-- Place favicon.png in the root directory -->
     <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon" />
+    <!-- FontAwesome (single load) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- Font Icons css -->
     <link rel="stylesheet" href="{{asset('css/font-icons.css')}}">
     <!-- plugins css -->
@@ -24,15 +23,11 @@
     <!-- Responsive css -->
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
     
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js@3.4.0/minified/introjs.min.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/intro.js@3.4.0/minified/intro.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/js/shepherd.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css"/>
-
-    <script src="https://kit.fontawesome.com/770d02fc1e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@10.0.1/dist/css/shepherd.css"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     
@@ -68,4 +63,3 @@
     @include('layout.scripts')
 </body>
 </html>
-
