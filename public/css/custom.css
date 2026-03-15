@@ -3069,3 +3069,74 @@ html {
         padding: 60px 0 !important;
     }
 }
+
+/* ===== MEGA FIX — Maximum specificity ===== */
+
+/* Hero text MUST be white */
+body .home-banner .section-title-area .section-title,
+body .home-banner .about-us-info-wrap .section-title,
+body .home-banner h1,
+body .home-banner h1.section-title,
+.h-100-v .home-banner .section-title,
+.ltn__about-us-area.home-banner .section-title {
+    color: #FFFFFF !important;
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+}
+
+body .home-banner p,
+body .home-banner .hero-subtitle,
+.home-banner .section-title-area p {
+    color: rgba(255,255,255,0.85) !important;
+    text-align: center !important;
+}
+
+/* Hide hamburger on desktop */
+@media (min-width: 992px) {
+    .mobile-only,
+    #toggleMenu,
+    button[aria-label="Menu openen"] {
+        display: none !important;
+    }
+}
+
+/* Center hero content */
+body .home-banner .about-us-info-wrap,
+body .home-banner .section-title-area {
+    text-align: center !important;
+}
+
+/* Bekijk alle thuiskoks button */
+body .home-banner .btn,
+body .home-banner a.btn {
+    background: rgba(255,255,255,0.15) !important;
+    color: white !important;
+    border: 1px solid rgba(255,255,255,0.3) !important;
+    border-radius: 24px !important;
+    padding: 12px 28px !important;
+    font-weight: 600 !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+body .home-banner .btn:hover {
+    background: rgba(255,255,255,0.25) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Cookie banner compact */
+.accept-cookies,
+.cookie-consent-bar,
+.cc-window {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    max-width: 500px !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12) !important;
+    z-index: 10000 !important;
+    background: white !important;
+    padding: 20px !important;
+    font-size: 0.85rem !important;
+}
