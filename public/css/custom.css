@@ -3664,3 +3664,144 @@ body .filter.sidenav label {
 body .fa-pepper-hot {
   color: var(--dbk-primary) !important;
 }
+
+/* ======================================
+   FINAL FIXES — Mobile overlay + Steps
+   ====================================== */
+
+/* Force mobile overlay hidden on desktop */
+@media (min-width: 992px) {
+    body .dbk-mobile-overlay,
+    .dbk-mobile-overlay {
+        display: none !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
+}
+
+/* Steps redesign — NOT clickable, pure informational */
+body .dbk-steps {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 40px !important;
+    max-width: 900px !important;
+    margin: 50px auto 0 !important;
+    position: relative !important;
+}
+
+/* Remove connector divs */
+body .dbk-step-connector {
+    display: none !important;
+}
+
+body .dbk-step {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-align: center !important;
+    padding: 0 20px !important;
+    cursor: default !important;
+    transition: none !important;
+    position: relative !important;
+}
+
+/* Remove hover effects — these are NOT clickable */
+body .dbk-step:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+body .dbk-step-number {
+    width: 44px !important;
+    height: 44px !important;
+    background: var(--dbk-primary) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.1rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 20px !important;
+    box-shadow: 0 4px 12px rgba(255,107,53,0.3) !important;
+}
+
+body .dbk-step-img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: contain !important;
+    margin: 0 auto 20px !important;
+    display: block !important;
+}
+
+body .dbk-step h3 {
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    color: var(--dbk-secondary) !important;
+    margin-bottom: 10px !important;
+}
+
+body .dbk-step p {
+    font-size: 0.9rem !important;
+    color: var(--dbk-text-light) !important;
+    line-height: 1.6 !important;
+}
+
+/* Connecting line between steps (desktop only) */
+@media (min-width: 768px) {
+    body .dbk-steps::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 22px !important;
+        left: 20% !important;
+        right: 20% !important;
+        height: 2px !important;
+        background: repeating-linear-gradient(90deg, var(--dbk-border) 0, var(--dbk-border) 8px, transparent 8px, transparent 16px) !important;
+        z-index: 0 !important;
+    }
+    
+    body .dbk-step-number {
+        position: relative !important;
+        z-index: 1 !important;
+    }
+}
+
+/* Mobile: stack steps vertically */
+@media (max-width: 767px) {
+    body .dbk-steps {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+    
+    body .dbk-step {
+        display: flex !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        gap: 16px !important;
+    }
+    
+    body .dbk-step-img {
+        width: 60px !important;
+        height: 60px !important;
+        flex-shrink: 0 !important;
+    }
+}
+
+/* Section title styling */
+body .dbk-section-title {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: var(--dbk-secondary) !important;
+    text-align: center !important;
+    margin-bottom: 0 !important;
+}
+
+/* Testimonials — niet klikbaar, puur informatief */
+body .dbk-testimonial-card {
+    cursor: default !important;
+}
+
+body .dbk-testimonial-card:hover {
+    transform: none !important;
+}
