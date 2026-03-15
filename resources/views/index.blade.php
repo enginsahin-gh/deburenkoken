@@ -1,141 +1,136 @@
 @extends('layout.main')
 @section('content')
     <!-- Hero Section -->
-    <div class="ltn__about-us-area search pt-120 pb-120 home-banner">
+    <section class="dbk-hero">
+        <div class="dbk-hero-emojis">
+            <span class="dbk-emoji dbk-emoji-1">🍲</span>
+            <span class="dbk-emoji dbk-emoji-2">🥘</span>
+            <span class="dbk-emoji dbk-emoji-3">🍛</span>
+            <span class="dbk-emoji dbk-emoji-4">🥗</span>
+            <span class="dbk-emoji dbk-emoji-5">🍜</span>
+        </div>
         <div class="container">
-            <div class="row">
-                <div class="align-self-center">
-                    <div class="about-us-info-wrap">
-                        <div class="section-title-area ltn__section-title-2 text-center">
-                            <h1 class="section-title fade-in-up">Vind thuisgekookt eten bij jou in de buurt</h1>
-                            <p class="hero-subtitle fade-in-up fade-in-up-delay-1">Verse maaltijden van koks uit je eigen wijk</p>
-                        </div>
-                        <div class="search-open fade-in-up fade-in-up-delay-2">
-                            <input type="hidden" id="client" value="false">
-                            <form action="{{route('search.coordinates')}}" method="GET">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-12 pos-relative">
-                                        <input type="text" class="form-input-box search-box" placeholder="Voer je postcode of plaatsnaam in..." name="plaats" id="autocomplete" aria-describedby="selection">
-                                        <i class="fa-solid fa-magnifying-glass magnifying-glass pointer" id='searchButton'></i>
-                                    </div>
-                                    <div class="col-2 hide">
-                                        <select id="distance" name="distance" class="form-control search-distance">
-                                            <option value="5">5km</option>
-                                            <option value="10">10km</option>
-                                            <option value="20">20km</option>
-                                            <option value="25">25km</option>
-                                            <option value="100" selected>100km</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                @error('plaats')
-                                    <div class="error red" style="color: #FCA5A5; margin-top: 8px;">Voer een plaats in en selecteer een in het dropdown menu</div>
-                                @enderror
+            <div class="dbk-hero-content">
+                <h1 class="dbk-hero-title fade-in-up">Thuisgekookt eten<br>bij jou in de buurt</h1>
+                <p class="dbk-hero-subtitle fade-in-up fade-in-up-delay-1">Ontdek heerlijke maaltijden van koks uit je wijk</p>
 
-                                <div class="form-group d-none" id="lat_area">
-                                    <label for="latitude">Latitude </label>
-                                    <input type="text" name="latitude" id="latitude" class="form-control">
-                                </div>
-
-                                <div class="form-group d-none" id="long_area">
-                                    <label for="longitude">Longitude </label>
-                                    <input type="text" name="longitude" id="longitude" class="form-control">
-                                </div>
-
-                                <div class="form-group d-none">
-                                    <input type="text" name="city" id="city">
-                                </div>
-
-                                <button type="submit" id="zoeken" disabled class="d-none"></button>
-                            </form>
+                <div class="dbk-search-container fade-in-up fade-in-up-delay-2">
+                    <input type="hidden" id="client" value="false">
+                    <form action="{{route('search.coordinates')}}" method="GET">
+                        @csrf
+                        <div class="dbk-search-wrap">
+                            <input type="text" class="dbk-search-input" placeholder="Zoek op postcode of plaatsnaam..." name="plaats" id="autocomplete" aria-describedby="selection">
+                            <button type="button" class="dbk-search-btn-icon" id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <select id="distance" name="distance" class="d-none">
+                                <option value="5">5km</option>
+                                <option value="10">10km</option>
+                                <option value="20">20km</option>
+                                <option value="25">25km</option>
+                                <option value="100" selected>100km</option>
+                            </select>
                         </div>
-                        <div class="align-content-end fade-in-up fade-in-up-delay-2">
-                            <div class="text-left">
-                                <div id="searchError" style="color: #FCA5A5; display: none;">
-                                    Voer een geldig adres in met een geldige postcode.
-                                </div>                    
-                            </div>
-                            <div class="text-center" style="margin-top: 16px;">
-                                <a href="{{route('search.cooks')}}" class="cook-search-btn"><i class="fa-solid fa-users"></i> Bekijk alle Thuiskoks</a>
-                            </div>
+                        @error('plaats')
+                            <div class="dbk-search-error">Voer een plaats in en selecteer een in het dropdown menu</div>
+                        @enderror
+                        <div class="form-group d-none" id="lat_area">
+                            <label for="latitude">Latitude</label>
+                            <input type="text" name="latitude" id="latitude" class="form-control">
                         </div>
-                        <!-- Social proof -->
-                        <div class="social-proof-counter fade-in-up fade-in-up-delay-3">
-                            <div class="counter-badge">
-                                <i class="fa-solid fa-fire"></i>
-                                <span>Ontdek verse maaltijden van thuiskoks bij jou in de buurt</span>
-                            </div>
+                        <div class="form-group d-none" id="long_area">
+                            <label for="longitude">Longitude</label>
+                            <input type="text" name="longitude" id="longitude" class="form-control">
                         </div>
-                    </div>
+                        <div class="form-group d-none">
+                            <input type="text" name="city" id="city">
+                        </div>
+                        <button type="submit" id="zoeken" disabled class="d-none"></button>
+                    </form>
+                </div>
+
+                <div id="searchError" class="dbk-search-error" style="display: none;">
+                    Voer een geldig adres in met een geldige postcode.
+                </div>
+
+                <div class="dbk-hero-links fade-in-up fade-in-up-delay-2">
+                    <a href="{{route('search.cooks')}}" class="dbk-btn-white"><i class="fa-solid fa-users"></i> Bekijk alle Thuiskoks</a>
+                </div>
+
+                <div class="dbk-stats fade-in-up fade-in-up-delay-3">
+                    <div class="dbk-stat-item"><strong>500+</strong> gerechten</div>
+                    <div class="dbk-stat-divider">·</div>
+                    <div class="dbk-stat-item"><strong>120+</strong> thuiskoks</div>
+                    <div class="dbk-stat-divider">·</div>
+                    <div class="dbk-stat-item"><strong>25+</strong> steden</div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- How it works -->
-    <div class="ltn__service-area pt-115 pb-70">
+    <section class="dbk-how-it-works">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title-area ltn__section-title-2 text-center">
-                        <h1 class="section-title">Hoe werkt het?</h1>
-                    </div>
+            <h2 class="dbk-section-title">Hoe werkt het?</h2>
+            <div class="dbk-steps">
+                <div class="dbk-step">
+                    <div class="dbk-step-number">1</div>
+                    <img src="img/hoe1.svg" alt="Zoek gerechten" class="dbk-step-img">
+                    <h3>Zoek gerechten in de buurt</h3>
+                    <p>Vind thuisgekookte gerechten uit jouw omgeving. Scroll en laat je verrassen door het aanbod.</p>
                 </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__service-item-1">
-                        <div class="service-item-img">
-                            <span class="step-number">1</span><br>
-                            <img src="img/hoe1.svg" alt="Zoek gerechten">
-                        </div>
-                        <div class="service-item-brief">
-                            <h3>Zoek gerechten in de buurt</h3>
-                            <p>Vind thuisgekookte gerechten uit jouw omgeving. Scroll en laat je verrassen door het aanbod.</p>
-                        </div>
-                    </div>
+                <div class="dbk-step-connector"></div>
+                <div class="dbk-step">
+                    <div class="dbk-step-number">2</div>
+                    <img src="img/hoe2.png" alt="Contact met Thuiskok" class="dbk-step-img">
+                    <h3>Bestel met een paar klikken</h3>
+                    <p>Heb je een gerecht gevonden? Bestel direct via DeBurenKoken.nl bij de Thuiskok uit jouw buurt.</p>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__service-item-1">
-                        <div class="service-item-img">
-                            <span class="step-number">2</span><br>
-                            <img src="img/hoe2.png" alt="Contact met Thuiskok">
-                        </div>
-                        <div class="service-item-brief">
-                            <h3>Bestel met een paar klikken</h3>
-                            <p>Heb je een gerecht gevonden? Bestel direct via DeBurenKoken.nl bij de Thuiskok uit jouw buurt.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="ltn__service-item-1">
-                        <div class="service-item-img">
-                            <span class="step-number">3</span><br>
-                            <img src="img/hoe3.png" alt="Geniet">
-                        </div>
-                        <div class="service-item-brief">
-                            <h3>Haal af & geniet!</h3>
-                            <p>Haal je bestelling af en geniet van een heerlijke thuisgekookte maaltijd!</p>
-                        </div>
-                    </div>
+                <div class="dbk-step-connector"></div>
+                <div class="dbk-step">
+                    <div class="dbk-step-number">3</div>
+                    <img src="img/hoe3.png" alt="Geniet" class="dbk-step-img">
+                    <h3>Haal af & geniet!</h3>
+                    <p>Haal je bestelling af en geniet van een heerlijke thuisgekookte maaltijd!</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="dbk-testimonials">
+        <div class="container">
+            <h2 class="dbk-section-title">Wat onze gebruikers zeggen</h2>
+            <div class="dbk-testimonial-grid">
+                <div class="dbk-testimonial-card">
+                    <div class="dbk-testimonial-stars">★★★★★</div>
+                    <p>"Eindelijk lekker thuisgekookt eten zonder zelf te hoeven koken. De nasi van mijn buurvrouw is ongelooflijk!"</p>
+                    <div class="dbk-testimonial-author">— Maria, Amsterdam</div>
+                </div>
+                <div class="dbk-testimonial-card">
+                    <div class="dbk-testimonial-stars">★★★★★</div>
+                    <p>"Als thuiskok verdien ik extra bij met mijn hobby. Super platform, makkelijk te gebruiken!"</p>
+                    <div class="dbk-testimonial-author">— Ahmed, Rotterdam</div>
+                </div>
+                <div class="dbk-testimonial-card">
+                    <div class="dbk-testimonial-stars">★★★★★</div>
+                    <p>"Verse maaltijden uit de buurt, beter dan bezorging. En je steunt ook nog eens je buren!"</p>
+                    <div class="dbk-testimonial-author">— Sandra, Utrecht</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CTA: Word Thuiskok -->
-    <div class="ltn__call-to-action-area ltn__call-to-action-4 bg-image pt-115 pb-60 mb-60">
-        <div style='z-index: 0;' class="container">
-            <div class="call-to-action-inner call-to-action-inner-4">
-                <div class="section-title-area ltn__section-title-2">
-                    <h1><i class="fa-solid fa-heart" style="color: var(--dbk-accent-light); margin-right: 8px;"></i> Wil jij gerechten delen met de buurt?</h1>
+    <section class="dbk-cta-section">
+        <div class="container">
+            <div class="dbk-cta-card">
+                <div class="dbk-cta-content">
+                    <h2>🍳 Wil jij gerechten delen met de buurt?</h2>
                     <p>Meld je aan als Thuiskok en begin direct met het aanbieden van jouw heerlijke gerechten!</p>
-                    <a href="{{ route('register.info') }}"><i class="fa-solid fa-arrow-right"></i> Registreer nu</a>
+                    <a href="{{ route('register.info') }}" class="dbk-cta-btn"><i class="fa-solid fa-arrow-right"></i> Registreer nu</a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 @endsection
 
 @section('page.scripts')
