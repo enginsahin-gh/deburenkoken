@@ -25,7 +25,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 COPY . .
 
 # Install PHP deps
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN docker-php-ext-install exif && composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-req=ext-exif
 
 # Install Node deps & build
 RUN npm ci && npm run build || true
