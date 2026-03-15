@@ -22,6 +22,26 @@
                     <li><a href="{{route('cookie')}}">Cookieverklaring</a></li>
                 </ul>
             </div>
+            <div class="dbk-footer-links dbk-footer-faq">
+                <h4>Veelgestelde vragen</h4>
+                <ul>
+                    <li>
+                        <a href="{{route('register.info')}}"><i class="fa-solid fa-chevron-right"></i> Hoe word ik Thuiskok?</a>
+                    </li>
+                    <li>
+                        <span class="dbk-faq-q"><i class="fa-solid fa-chevron-right"></i> Is het gratis om te bestellen?</span>
+                        <span class="dbk-faq-a">Ja, alleen de gerechten betaal je.</span>
+                    </li>
+                    <li>
+                        <span class="dbk-faq-q"><i class="fa-solid fa-chevron-right"></i> Hoe werkt betalen?</span>
+                        <span class="dbk-faq-a">Veilig via iDEAL of creditcard.</span>
+                    </li>
+                    <li>
+                        <a href="{{route('search.cooks')}}"><i class="fa-solid fa-chevron-right"></i> In welke steden zijn jullie actief?</a>
+                        <span class="dbk-faq-a">We groeien snel! Check de zoekpagina.</span>
+                    </li>
+                </ul>
+            </div>
             <div class="dbk-footer-social">
                 @if(env('SOCIAL_FACEBOOK') || env('SOCIAL_INSTAGRAM') || env('SOCIAL_TWITTER'))
                 <div class="dbk-social-icons">

@@ -3386,3 +3386,281 @@ body .dbk-accordion-body a {
     display: none !important;
   }
 }
+
+/* ============================================================
+   UI FIX PATCH — Navbar, Cook Cards, Footer FAQ, Mobile Menu
+   ============================================================ */
+
+/* --- NAV LINKS: Better styling --- */
+body .dbk-nav ul li a {
+  font-weight: 500 !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: all 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  position: relative !important;
+}
+body .dbk-nav ul li a:hover {
+  background: rgba(255, 107, 53, 0.08) !important;
+  color: var(--dbk-primary) !important;
+}
+body .dbk-nav ul li a.dbk-nav-active {
+  color: var(--dbk-primary) !important;
+}
+body .dbk-nav ul li a.dbk-nav-active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 16px !important;
+  right: 16px !important;
+  height: 3px !important;
+  background: var(--dbk-primary) !important;
+  border-radius: 3px !important;
+}
+body .dbk-nav ul {
+  gap: 8px !important;
+}
+
+/* --- COOK CARDS: 2-column grid on desktop --- */
+@media (min-width: 769px) {
+  body .dbk-cook-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+  }
+}
+@media (max-width: 768px) {
+  body .dbk-cook-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+}
+
+/* --- COOK CARD: Bigger avatar, more padding, hover lift --- */
+body .dbk-cook-card {
+  padding: 28px !important;
+  border: 1px solid var(--dbk-border) !important;
+  position: relative !important;
+}
+body .dbk-cook-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12) !important;
+}
+@media (min-width: 769px) {
+  body .dbk-cook-card-avatar img {
+    width: 120px !important;
+    height: 120px !important;
+  }
+}
+
+/* --- "Bekijk profiel" link --- */
+body .dbk-view-profile {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: var(--dbk-primary) !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  margin-top: 12px !important;
+  transition: all 0.2s ease !important;
+}
+body .dbk-cook-card:hover .dbk-view-profile {
+  color: var(--dbk-primary-hover) !important;
+  gap: 10px !important;
+}
+
+/* --- Orange pill badge for adverts --- */
+body .dbk-pill-orange {
+  background: var(--dbk-primary) !important;
+  color: #fff !important;
+  padding: 4px 14px !important;
+  border-radius: var(--dbk-radius-pill) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+/* --- Rating stars: filled yellow/orange --- */
+body .dbk-cook-card-rating .fa-stack .fas.fa-star,
+body .dbk-cook-card-rating .fa-stack .fas.fa-star-half,
+body .star-filled,
+body .fa-star.fas,
+body .fa-star-half.fas {
+  color: #FFB627 !important;
+}
+body .dbk-cook-card-rating .fa-stack .far.fa-star {
+  color: #D1D5DB !important;
+}
+
+/* --- Footer FAQ styling --- */
+body .dbk-footer-faq ul li {
+  margin-bottom: 14px !important;
+}
+body .dbk-footer-faq .dbk-faq-q {
+  color: rgba(255, 255, 255, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  cursor: default !important;
+}
+body .dbk-footer-faq .dbk-faq-q i {
+  color: var(--dbk-primary) !important;
+  font-size: 0.7rem !important;
+}
+body .dbk-footer-faq .dbk-faq-a {
+  display: block !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 0.82rem !important;
+  margin-top: 2px !important;
+  padding-left: 18px !important;
+}
+body .dbk-footer-faq a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+}
+body .dbk-footer-faq a:hover {
+  color: var(--dbk-primary) !important;
+}
+body .dbk-footer-faq a i {
+  color: var(--dbk-primary) !important;
+  font-size: 0.7rem !important;
+}
+
+/* --- Footer grid update: now 5 columns --- */
+body .dbk-footer-grid {
+  grid-template-columns: 2fr 1fr 1fr 1.2fr auto !important;
+}
+@media (max-width: 768px) {
+  body .dbk-footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* --- Available/Advertenties page: dish cards upgrade --- */
+body .dish-row {
+  background: var(--dbk-surface) !important;
+  border-radius: var(--dbk-radius) !important;
+  overflow: hidden !important;
+  box-shadow: var(--dbk-shadow) !important;
+  transition: var(--dbk-transition) !important;
+  border: 1px solid var(--dbk-border) !important;
+  margin-bottom: 20px !important;
+}
+body .dish-row:hover {
+  box-shadow: var(--dbk-shadow-hover) !important;
+  transform: translateY(-3px) !important;
+}
+body .dish-row .dish-img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover !important;
+  border-radius: var(--dbk-radius) var(--dbk-radius) 0 0 !important;
+  display: block !important;
+}
+body .dish-row .top-bgrd {
+  margin: 0 !important;
+}
+body .dish-row .white-bgrd {
+  margin: 0 !important;
+  padding: 16px 20px !important;
+  cursor: pointer !important;
+}
+body .dish-row .price {
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--dbk-primary) !important;
+}
+body .dish-row .distance {
+  color: var(--dbk-text-light) !important;
+  font-size: 0.85rem !important;
+}
+body .dish-row .distance i {
+  color: var(--dbk-primary) !important;
+}
+body .dish-row .afhalen {
+  font-size: 0.85rem !important;
+  color: var(--dbk-text-light) !important;
+  margin: 8px 0 !important;
+}
+body .dish-row .round-image-container img {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+body .dish-row .star-font .fas.fa-star,
+body .dish-row .star-font .fas.fa-star-half {
+  color: #FFB627 !important;
+}
+body .dish-row .star-font .far.fa-star {
+  color: #D1D5DB !important;
+}
+body .dish-row .types .round-item {
+  background: var(--dbk-bg) !important;
+  padding: 3px 10px !important;
+  border-radius: 20px !important;
+  margin-right: 6px !important;
+  margin-bottom: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+body .dish-row .description {
+  color: var(--dbk-text-light) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-top: 8px !important;
+}
+body .dish-collection {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+}
+@media (max-width: 768px) {
+  body .dish-collection {
+    grid-template-columns: 1fr !important;
+  }
+}
+body .nog {
+  position: absolute !important;
+  bottom: 10px !important;
+  left: 10px !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  color: #fff !important;
+  padding: 4px 14px !important;
+  border-radius: var(--dbk-radius-pill) !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* --- Filter sidebar improvements --- */
+body .filter.sidenav {
+  background: var(--dbk-surface) !important;
+  border-radius: 0 var(--dbk-radius) var(--dbk-radius) 0 !important;
+  box-shadow: var(--dbk-shadow) !important;
+  padding: 20px !important;
+}
+body .filter.sidenav h2 {
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: var(--dbk-secondary) !important;
+}
+body .filter.sidenav label {
+  font-weight: 500 !important;
+  color: var(--dbk-text) !important;
+}
+
+/* --- Spice peppers color fix --- */
+body .fa-pepper-hot {
+  color: var(--dbk-primary) !important;
+}

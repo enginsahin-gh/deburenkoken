@@ -82,11 +82,12 @@
                         </div>
                         <p class="dbk-cook-card-desc">{{(strlen($cook->user->profileDescription?->getDescription()) > 150) ? substr($cook->user->profileDescription?->getDescription(),0,150).'...' : $cook->user->profileDescription?->getDescription()}}</p>
                         <div class="dbk-cook-card-meta">
-                            <span class="dbk-meta-location"><i class="fa fa-map-marker"></i> {{$cook->getCity()}}</span>
+                            <span class="dbk-meta-location"><i class="fa-solid fa-location-dot"></i> {{$cook->getCity()}}</span>
                             @if(!is_null($cook->getDistance()))
-                                <span class="dbk-meta-distance"><i class="fa fa-location-dot"></i> @if ($cook->getDistance() < 1) &lt; @endif {{ceil($cook->getDistance())}} km</span>
+                                <span class="dbk-meta-distance"><i class="fa-solid fa-route"></i> @if ($cook->getDistance() < 1) &lt; @endif {{ceil($cook->getDistance())}} km</span>
                             @endif
-                            <span class="dbk-meta-adverts">
+                            <span class="dbk-meta-adverts dbk-pill-orange">
+                                <i class="fa-solid fa-utensils"></i>
                                 {{count(array_filter(
                                     $cook->adverts->map(function (\App\Models\Advert $advert) {
                                         return !$advert->isPublished() && $advert->getParsedPickupTo() > \Carbon\Carbon::now();
@@ -94,6 +95,7 @@
                                 }} advertenties online
                             </span>
                         </div>
+                        <span class="dbk-view-profile">Bekijk profiel <i class="fa-solid fa-arrow-right"></i></span>
                     </div>
                 </a>
             @endforeach

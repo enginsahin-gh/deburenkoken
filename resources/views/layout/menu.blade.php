@@ -7,8 +7,10 @@
                 </div>
                 <nav class="dbk-nav">
                     <ul>
-                        <li><a href="{{route('info')}}">Over Ons</a></li>
-                        <li><a href="{{route('contact')}}">Contact</a></li>
+                        <li><a href="{{route('search.cooks')}}" class="{{ request()->routeIs('search.cooks*') ? 'dbk-nav-active' : '' }}"><i class="fa-solid fa-users"></i> Thuiskoks</a></li>
+                        <li><a href="{{route('info')}}" class="{{ request()->routeIs('info') ? 'dbk-nav-active' : '' }}"><i class="fa-solid fa-circle-question"></i> Hoe werkt het?</a></li>
+                        <li><a href="{{route('info')}}" class="{{ request()->routeIs('info') ? 'dbk-nav-active' : '' }}">Over Ons</a></li>
+                        <li><a href="{{route('contact')}}" class="{{ request()->routeIs('contact') ? 'dbk-nav-active' : '' }}">Contact</a></li>
                     </ul>
                 </nav>
                 <div class="dbk-header-actions">
@@ -43,6 +45,8 @@
         <nav class="dbk-mobile-nav">
             <ul>
                 <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('search.cooks')}}"><i class="fa-solid fa-users"></i> Thuiskoks</a></li>
+                <li><a href="{{route('info')}}"><i class="fa-solid fa-circle-question"></i> Hoe werkt het?</a></li>
                 <li><a href="{{route('info')}}">Over Ons</a></li>
                 <li><a href="{{route('contact')}}">Contact</a></li>
                 @guest
