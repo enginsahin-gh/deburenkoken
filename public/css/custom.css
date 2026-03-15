@@ -2818,3 +2818,254 @@ button#filter { width: 50px !important; display: inline-flex; float: right; marg
     .col.f { padding: 0; margin-right: 0; }
     button#filter { margin-right: 0 !important; }
 }
+
+/* =============================================
+   FORCE OVERRIDES — High specificity
+   ============================================= */
+
+/* Body & Background */
+html body,
+html body.container,
+.body-wrapper,
+.ltn__about-us-area,
+.ltn__call-to-action-area {
+    background-color: #FEFAE0 !important;
+}
+
+/* Hero Section */
+.home-banner {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%) !important;
+    min-height: 500px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.home-banner .section-title,
+.home-banner h1 {
+    color: #FFFFFF !important;
+    font-size: 2.5rem !important;
+    font-weight: 800 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2) !important;
+}
+
+.home-banner .hero-subtitle,
+.home-banner p {
+    color: rgba(255,255,255,0.85) !important;
+    font-size: 1.2rem !important;
+}
+
+/* Glassmorphic Search */
+.home-banner .search-open,
+.home-banner form {
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    border-radius: 16px !important;
+    padding: 24px !important;
+    max-width: 600px !important;
+    margin: 30px auto 0 !important;
+}
+
+.home-banner input[type="text"],
+.home-banner .search-box,
+.home-banner .form-input-box {
+    background: rgba(255,255,255,0.9) !important;
+    border: 2px solid rgba(255,255,255,0.5) !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    font-size: 1.1rem !important;
+    color: #1B1B1B !important;
+    width: 100% !important;
+}
+
+.home-banner input[type="text"]:focus {
+    border-color: #E76F51 !important;
+    box-shadow: 0 0 0 3px rgba(231,111,81,0.2) !important;
+    outline: none !important;
+}
+
+/* Navbar */
+.ltn__header-sticky,
+.ltn__header-middle-area {
+    background: rgba(255,255,255,0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+}
+
+/* Buttons */
+.red-round-border,
+a.red-round-border,
+.btn.theme-btn-1,
+.theme-btn-1 {
+    background-color: #E76F51 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+.red-round-border:hover,
+a.red-round-border:hover,
+.theme-btn-1:hover {
+    background-color: #D65F41 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(231,111,81,0.3) !important;
+    color: #FFFFFF !important;
+}
+
+/* Cards */
+.cook-card,
+.product-item,
+.ltn__product-item,
+.single-cook,
+.cook-item {
+    background: #FFFFFF !important;
+    border-radius: 12px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    border: 1px solid #E5E7EB !important;
+    transition: all 0.2s ease !important;
+    overflow: hidden !important;
+}
+
+.cook-card:hover,
+.product-item:hover,
+.ltn__product-item:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+/* Steps Section */
+.ltn__feature-area,
+.ltn__call-to-action-area {
+    background-color: #FEFAE0 !important;
+}
+
+.ltn__feature-item,
+.step-card {
+    background: #FFFFFF !important;
+    border-radius: 12px !important;
+    padding: 32px 24px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
+}
+
+.ltn__feature-item:hover,
+.step-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+.step-number {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 48px !important;
+    height: 48px !important;
+    background: linear-gradient(135deg, #2D6A4F, #40916C) !important;
+    color: white !important;
+    border-radius: 50% !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 16px !important;
+}
+
+/* Footer */
+footer,
+.ltn__footer-area,
+.footer-area {
+    background-color: #1B4332 !important;
+    color: rgba(255,255,255,0.8) !important;
+}
+
+footer a,
+.ltn__footer-area a,
+.footer-area a {
+    color: rgba(255,255,255,0.7) !important;
+}
+
+footer a:hover,
+.ltn__footer-area a:hover {
+    color: #F4A261 !important;
+}
+
+/* Login Page */
+.login-split-left {
+    background: linear-gradient(135deg, #1B4332, #2D6A4F) !important;
+    color: white !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    padding: 40px !important;
+}
+
+/* Diet Badges */
+.diet-badge,
+.badge-halal,
+.badge-vegan,
+.badge-vegetarisch {
+    display: inline-block !important;
+    padding: 4px 12px !important;
+    border-radius: 24px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    margin-right: 4px !important;
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, #1B4332, #2D6A4F) !important;
+    padding: 40px 0 !important;
+}
+
+.page-header h1 {
+    color: #FFFFFF !important;
+}
+
+/* Social Proof Badge */
+.social-proof-badge {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: rgba(255,255,255,0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 24px !important;
+    padding: 8px 20px !important;
+    color: white !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth !important;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .home-banner .section-title,
+    .home-banner h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .home-banner {
+        min-height: 400px !important;
+        padding: 60px 0 !important;
+    }
+}
